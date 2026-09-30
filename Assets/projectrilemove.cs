@@ -1,0 +1,16 @@
+using UnityEditor.ShaderGraph.Internal;
+using UnityEngine;
+
+public class ProjectrileMove : MonoBehaviour
+{
+    public float speed = 6;
+    public int points = 100;
+    void Update()
+    {
+        transform.Translate(-transform.right * speed * Time.deltaTime);
+        if(transform.position.x < -10)
+        {
+            Destroy(gameObject);
+        }
+    }
+}
